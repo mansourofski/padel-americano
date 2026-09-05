@@ -38,13 +38,13 @@ jobs:
             "platforms;android-36" \
             "build-tools;36.0.0"
 
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
+
       - name: Show Java version
         run: |
           java -version
           javac -version
-
-      - name: Make Gradle wrapper executable
-        run: chmod +x ./gradlew
 
       - name: Show Gradle version
         run: ./gradlew --version
