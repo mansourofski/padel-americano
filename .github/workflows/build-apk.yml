@@ -12,6 +12,7 @@ permissions:
 
 jobs:
   build-debug-apk:
+    name: Build debug APK
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -32,7 +33,7 @@ jobs:
         shell: bash
         run: |
           yes | sdkmanager --licenses >/dev/null || true
-          sdkmanager "platforms;android-37" "build-tools;37.0.0"
+          sdkmanager --channel=3 "platforms;android-37" "build-tools;37.0.0"
 
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
@@ -44,7 +45,8 @@ jobs:
         run: ./gradlew :app:assembleDebug --stacktrace
 
       - name: Prepare APK
-        run: cp app/build/outputs/apk/debug/app-debug.apk Padel-Americano-debug.apk
+        run: |
+          cp app/build/outputs/apk/debug/app-debug.apk Padel-Americano-debug.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v7
@@ -52,3 +54,4 @@ jobs:
           name: Padel-Americano-debug
           path: Padel-Americano-debug.apk
           retention-days: 30
+          if-no-files-found: error
