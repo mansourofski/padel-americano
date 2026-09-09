@@ -1,0 +1,10 @@
+{
+  "name": "padel-americano",
+  "compatibility_date": "2026-09-09",
+  "build": {
+    "command": "node web/build.mjs"
+  },
+  "assets": {
+    "directory": "./web/dist"
+  }
+}
