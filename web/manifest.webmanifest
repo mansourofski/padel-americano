@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "Padel Americano",
+  "short_name": "Padel",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#102b3c",
+  "theme_color": "#102b3c",
+  "icons": [
+    {
+      "purpose": "any",
+      "type": "image/png",
+      "src": "icon-192.png",
+      "sizes": "192x192"
+    },
+    {
+      "purpose": "any maskable",
+      "type": "image/png",
+      "src": "icon-512.png",
+      "sizes": "512x512"
+    }
+  ]
+}
